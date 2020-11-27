@@ -20,24 +20,25 @@
     =========================================================
     * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     -->
-<link href="/main.css" rel="stylesheet"></head>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
+    <link href="/main.css" rel="stylesheet"></head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        
+
         @include('topbar')
         <!-- Thsi is topbar -->
         <div class="app-main">
-                
-        
+
+
         @include('sidebar')
-        
-        
-        
-        
-        
+
+
+
+
+
         <div class="app-main__outer">
                     <div class="app-main__inner">
-                        @yield('content') 
+                        @yield('content')
                     </div>
                     <div class="app-wrapper-footer">
                         <div class="app-footer">
@@ -78,5 +79,19 @@
                     </div>    </div>
         </div>
     </div>
-<script type="text/javascript" src="/assets/scripts/main.js"></script></body>
+    <script src="{{ mix('js/app.js') }}"></script>
+<script>
+const default_layout = "default";
+
+
+export default {
+  computed: {},
+  data() {
+      return {
+          message:'Hello World'
+      }
+  }
+};
+</script>
+</body>
 </html>

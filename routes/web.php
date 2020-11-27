@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +17,19 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-
+// ProductsController
 Route::get('/products',[ProductController::class,'index']);
 
 Route::get('/products/create',[ProductController::class,'create']);
 Route::post('/products/create',[ProductController::class,'store']);
 
+// PurchaseController
+Route::get('/purchases',[PurchaseController::class,'index']);
+Route::get('/purchases/create',[PurchaseController::class,'create']);
+
+// SupplierController
+Route::get('/supplier',[SupplierController::class,'index']);
+
 Route::get('/', function () {
     return view('welcome');
-}); 
+});

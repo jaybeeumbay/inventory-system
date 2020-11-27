@@ -9,12 +9,13 @@
                 <div class="card-body">
                     <h5 class="card-title">Products</h5>
 
-                    <table class="mb-0 table table-hover">
+                    <table class="mb-0 table table-hover table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Weight</th>
+                                <th>UCT ID</th>
+                                <th>NAME</th>
+                                <th>WEIGHT</th>
+                                <th>SUPPLIER</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -23,6 +24,7 @@
                                     <td>{{ $product->uct_id }}</td>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->weight }} g</td>
+                                    <td>{{ $product->supplier->name }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

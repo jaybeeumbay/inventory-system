@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use App\Models\Product as ProductModel;
+use App\Models\Supplier;
 
 class Products extends ProductModel
 {
@@ -10,11 +11,17 @@ class Products extends ProductModel
      *
      * @return bollean
      */
-    public function addProduct()
+    public function supplier()
     {
-        ProductModel::create(['name' => 'wewe', 'supplier_id' => 1]);
+        return $this->hasOne(Supplier::class,'id','supplier_id');
     }
-    
+
+    public function withSupplier()
+    {
+        return $this->with('supplier');
+    }
+
+
     // /**
     //  * can retrieve all the product(s)
     //  *
